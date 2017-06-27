@@ -48,6 +48,7 @@ terraform ${1} \
   -var "ert_subnet_id=${ert_subnet}" \
   -var "azure_multi_resgroup_network=${azure_multi_resgroup_network}" \
   -var "azure_multi_resgroup_pcf=${azure_multi_resgroup_pcf}" \
+  echo "after azure multi-resgroup" \
   azure-concourse/terraform/${azure_pcf_terraform_template}/init
 
 }
