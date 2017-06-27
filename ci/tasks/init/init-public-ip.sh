@@ -5,13 +5,17 @@ echo "==========================================================================
 echo "Executing Terraform ...."
 echo "=============================================================================================="
 
+echo ${azure_pcf_terraform_template}
+
 # Copy base template with no clobber if not using the base template
 if [[ ! ${azure_pcf_terraform_template} == "c0-azure-base" ]]; then
   cp -rn azure-concourse/terraform/c0-azure-base/* azure-concourse/terraform/${azure_pcf_terraform_template}/
 fi
 
 # Get ert subnet if multi-resgroup
-
+echo ${azure_service_principal_id}
+echo ${azure_service_principal_password}
+echo ${azure_tenant_id}
 azure login --service-principal -u ${azure_service_principal_id} -p ${azure_service_principal_password} --tenant ${azure_tenant_id}
 ert_subnet_cmd="azure network vnet subnet list -g network-core  -e vnet-pcf --json | jq '.[] | select(.name == \"ert\") | .id' | tr -d '\"'"
 ert_subnet=$(eval $ert_subnet_cmd)

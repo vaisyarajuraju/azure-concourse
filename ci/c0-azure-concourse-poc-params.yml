@@ -12,12 +12,12 @@ opsman_major_minor_version: '1\.9\..*' # Reqd
 ert_major_minor_version: '1\.9\..*' # Reqd
 
 # Pivent Download token
-pcf_pivnet_token: ""  # Reqd
+pcf_pivnet_token: 6QizQCGj-ULvjgzzn17L  # Reqd
 # Opsman Settings
 pcf_opsman_admin: admin
-pcf_opsman_admin_passwd: "P1v0t4l!"
+pcf_opsman_admin_passwd: P1v0t4l!
 # ERT Domain Name
-pcf_ert_domain: "azure.customer0.net"
+pcf_ert_domain: sarojraju.tk
 pcf_ssh_key_pub: ""
 pcf_ssh_key_priv: |
 
@@ -34,11 +34,11 @@ arg_wipe: wipe
 ### azure ###
 azure_pcf_terraform_template: c0-azure-base # 'Template' for pipeline to determine Terrafrom & Opsman JSON config
 azure_terraform_prefix: c0-opsman-validation # Prefix tag for Terraform created Objects
-azure_subscription_id: "" # REQD
-azure_tenant_id: "" # REQD
-azure_service_principal_id: "" # REQD
-azure_service_principal_password: "c0P1v0tal"
-azure_region: eastus # valid Azure region reqd
+azure_subscription_id: "992dff24-5a8a-4cf3-8701-353c7c22a2fb" # REQD
+azure_tenant_id: "6b40e4ac-4a61-4eb5-9eb9-e14838500e18" # REQD
+azure_service_principal_id: "2da0f93e-09c2-4083-9fbe-3b8ee2432518" # REQD
+azure_service_principal_password: "P1v0t4l!P1v0t4l!"
+azure_region: eastus2 # valid Azure region reqd
 azure_terraform_vnet_cidr: "192.168.0.0/20"
 azure_terraform_subnet_infra_cidr: "192.168.0.0/26"
 azure_terraform_subnet_infra_reserved: "192.168.0.1-192.168.0.9"
