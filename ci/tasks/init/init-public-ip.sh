@@ -48,19 +48,22 @@ terraform ${1} \
   -var "ert_subnet_id=${ert_subnet}" \
   -var "azure_multi_resgroup_network=${azure_multi_resgroup_network}" \
   -var "azure_multi_resgroup_pcf=${azure_multi_resgroup_pcf}" \
-  echo "after azure multi-resgroup" \
   azure-concourse/terraform/${azure_pcf_terraform_template}/init
 
 }
+echo "Saroj test 1"
 
 fn_terraform "plan"
 fn_terraform "apply"
 
 
+echo "Saroj test 2"
+
 echo "=============================================================================================="
 echo "This azure_pcf_terraform_template has an 'Init' set of terraform that has pre-created IPs..."
 echo "=============================================================================================="
 
+echo "Saroj test 3"
 
 azure login --service-principal -u ${azure_service_principal_id} -p ${azure_service_principal_password} --tenant ${azure_tenant_id}
 
