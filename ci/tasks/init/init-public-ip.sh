@@ -13,11 +13,10 @@ if [[ ! ${azure_pcf_terraform_template} == "c0-azure-base" ]]; then
 fi
 
 # Get ert subnet if multi-resgroup
-echo ${azure_service_principal_id}
-echo ${azure_service_principal_password}
-echo ${azure_tenant_id}
 azure login --service-principal -u ${azure_service_principal_id} -p ${azure_service_principal_password} --tenant ${azure_tenant_id}
+echo "login sucessfully to service principal with Principal ID=${azure_service_principal_id} , ${azure_service_principal_password} ,${azure_tenant_id}"
 ert_subnet_cmd="azure network vnet subnet list -g network-core  -e vnet-pcf --json | jq '.[] | select(.name == \"ert\") | .id' | tr -d '\"'"
+echo "after subnet command"
 ert_subnet=$(eval $ert_subnet_cmd)
 echo "Found SubnetID=${ert_subnet}"
 
