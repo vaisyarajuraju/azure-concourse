@@ -54,7 +54,9 @@ terraform ${1} \
 echo "Saroj test 1"
 
 fn_terraform "plan"
-fn_terraform "apply"
+
+#commented by Saroj
+#fn_terraform "apply"  
 
 
 echo "Saroj test 2"
